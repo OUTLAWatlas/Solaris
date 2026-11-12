@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0616">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>RenderFlow 2.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <!-- shown only inside Instagram / Facebook in-app browsers -->
+  <div id="igwall" class="igwall" hidden>
+    <div class="glass">
+      <h2>One quick thing 🙏</h2>
+      <p>This works best in Safari (music and the 3D bits don't like Instagram's browser).</p>
+      <p class="how">Tap <b>•••</b> at the top right → <b>Open in browser</b>.<br>Or copy the link and paste it into Safari.</p>
+      <button id="ig-copy" class="btn">Copy link</button>
+      <button id="ig-skip" class="linkbtn">Continue here anyway</button>
+    </div>
+  </div>
+
+  <!-- intro: fake RenderFlow editor -->
+  <div id="gate" class="gate">
+    <div class="editor">
+      <div class="ed-top"><span class="dots"><i></i><i></i><i></i></span><b id="gate-title"></b><span class="exp">Export</span></div>
+      <div class="ed-prev"><p id="gate-tag"></p><div id="ed-now" class="ed-now"></div></div>
+      <div class="ed-tl">
+        <div id="playhead" class="playhead"></div>
+        <div id="ed-tracks"></div>
+      </div>
+      <div class="bar"><i id="bar-fill"></i></div>
+      <small id="gate-line"></small>
+      <input id="gate-pass" class="pass" type="password" placeholder="Passcode" autocomplete="off" hidden>
+      <button id="gate-btn" class="btn" hidden></button>
+    </div>
+  </div>
+
+  <button id="mute" class="mute" aria-label="Toggle music" hidden>♪</button>
+  <div id="progress" class="progress" hidden><i></i></div>
+  <main id="story" hidden></main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
