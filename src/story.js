@@ -14,7 +14,7 @@ export default {
 
   intro: {
     appName: "RenderFlow 2.0",
-    tagline: "It Definitely Works This Time.",
+    tagline: "Now it actually renders. 365 days, one scene at a time.",
     renderLines: [
       "Importing 365 days of footage…",
       "Colour-grading the walks back from college…",
@@ -22,9 +22,80 @@ export default {
       "Removing 0 awkward moments (kept all of them)…",
       "Almost done…"
     ],
-    doneLine: "It Definitely Works This Time.",
+    doneLine: "Render complete.",
     lockedLine: "Your render is scheduled. It will be ready in",
     button: "Press play"
+  },
+
+  /* ============================================================
+     THE REVIEW QUIZ (opens after she taps the renewal button)
+     Edit freely. kinds: rate (0-10 slider) | choice | renew | text
+     {n} in a line is replaced by her rating. low = shown if rating <= 5, high = if >= 8.
+     ============================================================ */
+  quiz: {
+    email: "patil.krishna5410@gmail.com",   // where her answers are sent
+    whatsapp: "",                            // optional fallback, digits with country code e.g. "919XXXXXXXXX"; empty = she picks the chat
+    title: "Boyfriend Performance Review",
+    tag: "Annual review · Confidential",
+    intro: "Your subscription has renewed, which means it's time for the annual review. Please answer honestly. (Your answers go straight to HR. HR is me.)",
+    startButton: "Begin review",
+    submitButton: "Submit review",
+    loading: ["Counting eye-rolls…", "Converting ratings into guilt…", "Forwarding to HR (me)…", "Preparing your verdict…"],
+    questions: [
+      { id: "rage", kind: "rate", q: "Rate my ragebaiting skills.", lo: "amateur", hi: "professional menace",
+        low: "{n}/10 for ragebaiting?? 😭 Do you know how much dedication that takes? I've trained for a whole year.",
+        high: "{n}/10 for ragebaiting. Finally, someone recognises talent 🥸" },
+      { id: "photo", kind: "rate", q: "Rate my photography skills.", lo: "blurry crimes", hi: "National Geographic",
+        low: "haww.. you don't like my photos 😭😭🤧🥲🥺 {n}/10?? I tried so many angles while you were busy being gorgeous.",
+        high: "{n}/10 for my photos 🥹 the artist is finally understood." },
+      { id: "disguise", kind: "rate", q: "Rate my 🥸 disguise.", lo: "everyone knows", hi: "undercover legend",
+        low: "{n}/10 for the 🥸?? The moustache has feelings, you know.",
+        high: "{n}/10 for the disguise. Nobody suspects a thing 🕵️" },
+      { id: "style", kind: "rate", q: "Rate my fashion sense.", lo: "whatever was clean", hi: "runway ready",
+        low: "{n}/10 for my fashion sense?? 🥲 I color-coordinated that outfit for you.",
+        high: "{n}/10 for fashion. Finally, a stylist who understands me 😎" },
+      { id: "hugs", kind: "rate", q: "Rate my hugs.", lo: "wet noodle", hi: "premium grade",
+        low: "{n}/10 for hugs?? 🥺 I'm filing for a recount and one compensation hug.",
+        high: "{n}/10 for hugs. Unlimited supply, as promised 🫂" },
+      { id: "sulk", kind: "rate", q: "Rate my sulking skills (when I'm \"not angry\").", lo: "obviously fine", hi: "Oscar-worthy",
+        low: "{n}/10 for sulking?? I put real effort into that silence 😤",
+        high: "{n}/10 for sulking. I was not angry. (I was a little angry.)" },
+      { id: "five", kind: "rate", q: "How accurate is my \"just 5 minutes\"?", lo: "always 2 hours", hi: "to the second",
+        low: "{n}/10 on \"just 5 minutes\"… fair. I regret nothing ⏳",
+        high: "{n}/10 accuracy?? Liar. But thank you 🥲" },
+      { id: "jokes", kind: "rate", q: "Rate my jokes.", lo: "dead silence", hi: "stand-up special",
+        low: "{n}/10 for my jokes 😭 I saw you laugh once. Once is enough for the record.",
+        high: "{n}/10 for jokes. The comedy special is being scheduled 🎤" },
+      { id: "renderflow", kind: "rate", q: "Rate RenderFlow 1.0, the confession website. (Be honest. It's the reason you're here.)", lo: "buggy mess", hi: "life-changing",
+        low: "{n}/10 for RenderFlow 1.0?? That website literally got me a girlfriend. Respect the product 😤",
+        high: "{n}/10 for RenderFlow 1.0. Best deploy of my life 🚀" },
+      { id: "eyeroll", kind: "choice", q: "Eye-rolls I deserve per day:",
+        options: ["47 (current rate)", "100, I'm just warming up", "Uncountable"],
+        lines: ["47 eye-rolls a day. The average holds ✅", "100?! You're only warming up and I'm already scared 🙄", "Uncountable. Noted. I'm requesting medical insurance 🥲"] },
+      { id: "renew", kind: "renew", q: "Would you like to renew your subscription?", yes: "Renew ❤️", no: "Cancel",
+        teases: ["Nope 🥸", "Too slow!", "Cancel is on a break", "Not today", "Nice try, koala 🐨"],
+        caught: "Error 404: the cancellation department is permanently closed 🥲",
+        answer: "Renewed (cancel button could not be caught)",
+        line: "Renewal confirmed ✅ No refunds, as per the terms and conditions." },
+      { id: "overall", kind: "rate", q: "Overall boyfriend rating.", lo: "return to seller", hi: "keeper",
+        low: "{n}/10 overall?? 💔 I'm going to need an appeal form and a hug.",
+        high: "{n}/10 overall. Keeper status: locked in 🔒" },
+      { id: "complaint", kind: "text", q: "File one complaint against me. (It will be ignored.)", placeholder: "Type your complaint here…",
+        line: "Complaint filed: “{t}”. Status: ignored, framed, and hung on the wall 🖼️" },
+      { id: "more", kind: "text", q: "One thing I should do more of.", placeholder: "Be specific…",
+        line: "Noted: “{t}”. Adding it to my calendar immediately 📅" }
+    ],
+    verdicts: [
+      { max: 4.5, title: "Verdict: devastating 💔", sub: "An appeal has been filed. Hugs may reverse the decision." },
+      { max: 7.5, title: "Verdict: acceptable… for now 🥸", sub: "Probation extended. Performance will be monitored (with snacks)." },
+      { max: 11, title: "Verdict: certified keeper 👑", sub: "Subscription locked in for life. Terms remain unreasonable." }
+    ],
+    noGuilt: "Suspiciously good scores 🥸 What do you want?",
+    sent: "Review delivered to Krishna ✅",
+    sentSub: "He is reading it right now. Possibly crying.",
+    failed: "Couldn't reach HR automatically 🥺",
+    failedBtn: "Send it to Krishna on WhatsApp",
+    back: "Back to the story"
   },
 
   sections: [
