@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import S from './story.js';
 import { FX } from './fx.js';
 import { animateIn } from './anim.js';
+import { openQuiz } from './quiz.js';
 
 const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x != null) n.textContent = x; return n; };
 
@@ -198,6 +199,8 @@ const R = {
       b.hidden = true; sign.hidden = false; gsap.from(sign, { opacity: 0, y: 20, duration: 1 });
       FX.burst(170); setTimeout(() => FX.burst(120), 800); setTimeout(() => FX.burst(120), 1700);
       S._onHeart && S._onHeart();
+      setTimeout(openQuiz, 3200);                       // after the confetti and "Love, Your 🥸", the review opens
+      const again = el('button', 'linkbtn', 'Take the review again'); again.onclick = openQuiz; card.appendChild(again);
     };
     card.append(b, sign); w.appendChild(card); s.appendChild(w); return s;
   }
